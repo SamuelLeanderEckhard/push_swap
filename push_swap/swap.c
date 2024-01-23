@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:02:17 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/22 22:03:57 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:18:23 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static void	swap(t_stack **head)
 {
 	if (*head == NULL || (*head)->next == NULL)
-		return;
+		return ;
 	*head = (*head)->next;
 	(*head)->prev->prev = *head;
 	(*head)->prev->next = (*head)->next;
