@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 17:50:56 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/23 23:34:41 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/25 22:06:12 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,19 @@ void	rr(t_stack **a, t_stack **b, bool print);
 void	rra(t_stack **a, bool print);
 void	rrb(t_stack **b, bool print);
 void	rrr(t_stack **a, t_stack **b, bool print);
-void	pa(t_stack **b, t_stack **a, bool print);
-void	pb(t_stack **a, t_stack **b, bool print);
+void	pa(t_stack **a, t_stack **b, bool print);
+void	pb(t_stack **b, t_stack **a, bool print);
 
 //*Error/Free handling
 void	free_stack(t_stack	**stack);
+void	free_errors(t_stack	**a);
+int		error_syntax(char *str_check);
+int		error_duplicate(t_stack *a, int n);
 
 //*Stack Initialization
 void	init_stack_a(t_stack **a, char	**argv);
+t_stack	*get_cheapest(t_stack *stack);
+void	push_init(t_stack **stack, t_stack *top_node, char stack_name);
 
 //*Sort Algorithm
 void	sort_three(t_stack **a);
@@ -65,5 +70,7 @@ void	sort_three(t_stack **a);
 //*Utils
 t_stack	*find_max(t_stack *stack);
 t_stack	*find_last(t_stack *stack);
+int		stack_len(t_stack *stack);
+
 
 #endif

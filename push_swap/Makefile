@@ -6,7 +6,7 @@
 #    By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/14 17:57:16 by seckhard          #+#    #+#              #
-#    Updated: 2024/01/23 23:49:07 by seckhard         ###   ########.fr        #
+#    Updated: 2024/01/25 21:57:40 by seckhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,14 @@ NAME			= push_swap
 SOURCES 		= \
 							main.c push.c rev_rotate.c rotate.c \
 							swap.c utils.c stack_init.c sort_three.c \
-							errors.c
+							errors.c 
 
 OBJECTS 		= $(SOURCES:.c=.o)
 
 # Directories
 INCLUDE 		= push_swap.h
 LIBFT			= ./libft/libft.a
-PRINTF			= ./ft_printf/libftprintf.a
+FT_PRINTF			= ./ft_printf/libftprintf.a
 
 # Compiler and CFlags
 CC 				= gcc
@@ -33,7 +33,7 @@ LDFLAGS			= -L./libft -lft -L./ft_printf -lft
 
 # Build Rules
 $(NAME): 		$(OBJECTS) $(LIBFT) $(FT_PRINTF)
-				$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME) $(LIBFT) $(FT_PRINTF)
+				$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME) $(LDFLAGS)
 
 all:			$(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:00:40 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/23 20:58:49 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:20:36 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ static void	push(t_stack **dst, t_stack **src)
 }
 
 // Pushes to stack a
-void	pa(t_stack **b, t_stack **a, bool print)
+void	pa(t_stack **a, t_stack **b, bool print)
 {
-	push(b, a);
+	push(a, b);
 	if (!print)
 		ft_printf("pa\n");
 }
 
 // Pushes to stack b
-void	pb(t_stack **a, t_stack **b, bool print)
+void	pb(t_stack **b, t_stack **a, bool print)
 {
-	push(a, b);
+	push(b, a);
 	if (!print)
 		ft_printf("pb\n");
 }

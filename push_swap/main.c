@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:43:52 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/23 23:35:34 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/25 21:43:41 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (FAILURE);
-	else if (argc	 == 2)
+	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	init_stack_a(&a, argv + 1);
 	// if (!stack_sorted(a))
@@ -33,6 +33,6 @@ int	main(int argc, char **argv)
 	// 	else
 	// 		sort_stacks(&a, &b);
 	// }
-	free_stack(&a);
+	// free_stack(&a);
 	return (OK);
 }
