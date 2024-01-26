@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 17:51:08 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/25 21:42:05 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/26 22:29:23 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,17 @@ void	free_stack(t_stack	**stack)
 void	free_errors(t_stack	**a)
 {
 	free_stack(a);
-	ft_printf("Error.\n");
+	ft_printf("Error\n");
 	exit(1);
 }
 
 int	error_syntax(char *str_check)
 {
-	if (!(*str_check == '+' || *str_check == '-' 
+	if (!(*str_check == '+' || *str_check == '-'
 			|| (*str_check >= '0' && *str_check <= '9')))
 		return (FAILURE);
-	if (!(*str_check == '+' || *str_check == '-') 
-			&& !(str_check[1] >= '0' && str_check[1] <= '9'))
+	if (!(*str_check == '+' || *str_check == '-')
+		&& !(str_check[1] >= '0' && str_check[1] <= '9'))
 		return (FAILURE);
 	while (*++str_check)
 	{

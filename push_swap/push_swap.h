@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 17:50:56 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/25 22:06:12 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/26 22:27:21 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,23 @@ int		error_duplicate(t_stack *a, int n);
 
 //*Stack Initialization
 void	init_stack_a(t_stack **a, char	**argv);
-t_stack	*get_cheapest(t_stack *stack);
 void	push_init(t_stack **stack, t_stack *top_node, char stack_name);
+t_stack	*get_cheapest(t_stack *stack);
 
 //*Sort Algorithm
+void	sort_all(t_stack **a, t_stack **b);
 void	sort_three(t_stack **a);
 
-//*Utils
+//*Sort Algorithm Utils
+void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node);
+void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node);
+void	move_a_to_b(t_stack **a, t_stack **b);
+void	move_b_to_a(t_stack **a, t_stack **b);
+void	min_to_top(t_stack **a);
+
+//*Stack Utils
 t_stack	*find_max(t_stack *stack);
 t_stack	*find_last(t_stack *stack);
 int		stack_len(t_stack *stack);
-
 
 #endif
