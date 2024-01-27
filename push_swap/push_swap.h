@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 17:50:56 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/26 22:27:21 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:52:22 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ typedef struct s_stack
 {
 	long			nbr;
 	long			index;
+
 	int				push_cost;
+
 	bool			above_median;
 	bool			cheapest;
 
@@ -64,6 +66,11 @@ void	init_stack_a(t_stack **a, char	**argv);
 void	push_init(t_stack **stack, t_stack *top_node, char stack_name);
 t_stack	*get_cheapest(t_stack *stack);
 
+//*Push Initialization
+void	current_index(t_stack *stack);
+void	init_nodes_a(t_stack *a, t_stack *b);
+void	init_nodes_b(t_stack *a, t_stack *b);
+
 //*Sort Algorithm
 void	sort_all(t_stack **a, t_stack **b);
 void	sort_three(t_stack **a);
@@ -71,13 +78,15 @@ void	sort_three(t_stack **a);
 //*Sort Algorithm Utils
 void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node);
 void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node);
-void	move_a_to_b(t_stack **a, t_stack **b);
-void	move_b_to_a(t_stack **a, t_stack **b);
+void	push_a_to_b(t_stack **a, t_stack **b);
+void	push_b_to_a(t_stack **a, t_stack **b);
 void	min_to_top(t_stack **a);
 
 //*Stack Utils
-t_stack	*find_max(t_stack *stack);
 t_stack	*find_last(t_stack *stack);
+t_stack	*find_max(t_stack *stack);
+t_stack	*find_min(t_stack *stack);
 int		stack_len(t_stack *stack);
+bool	stack_sorted(t_stack *stack);
 
 #endif

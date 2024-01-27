@@ -6,7 +6,7 @@
 #    By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/14 17:57:16 by seckhard          #+#    #+#              #
-#    Updated: 2024/01/25 21:57:40 by seckhard         ###   ########.fr        #
+#    Updated: 2024/01/27 20:42:06 by seckhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ NAME			= push_swap
 
 # Source Files
 SOURCES 		= \
-							main.c push.c rev_rotate.c rotate.c \
-							swap.c utils.c stack_init.c sort_three.c \
-							errors.c 
+							main.c create_stack.c free_errors.c \
+							swap.c utils.c sort_three.c prep_a_to_b.c \
+							push.c rev_rotate.c rotate.c
 
 OBJECTS 		= $(SOURCES:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:22:58 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/22 22:02:47 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/27 22:03:12 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	rev_rotate(t_stack **stack)
 	last = find_last(*stack);
 	last->prev->next = NULL;
 	last->next = *stack;
-	//last->prev = NULL;
+	last->prev = NULL;
 	*stack = last;
 	last->next->prev = last;
 }

@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 17:30:52 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/26 21:52:32 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:38:36 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ void	sort_all(t_stack **a, t_stack **b)
 	while (len_a-- > 3 && !stack_sorted(*a))
 	{
 		init_nodes_a(*a, *b);
-		move_a_to_b(a, b);
+		push_a_to_b(a, b);
 	}
 	sort_three(a);
 	while (*b)
 	{
 		init_nodes_b(*a, *b);
-		move_b_to_a(a, b);
+		push_b_to_a(a, b);
 	}
 	current_index(*a);
 	min_on_top(a);
