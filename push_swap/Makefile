@@ -6,7 +6,7 @@
 #    By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/14 17:57:16 by seckhard          #+#    #+#              #
-#    Updated: 2024/01/27 20:42:06 by seckhard         ###   ########.fr        #
+#    Updated: 2024/01/29 22:04:54 by seckhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,11 @@ NAME			= push_swap
 
 # Source Files
 SOURCES 		= \
-							main.c create_stack.c free_errors.c \
-							swap.c utils.c sort_three.c prep_a_to_b.c \
-							push.c rev_rotate.c rotate.c
+							create_stack.c main.c free_errors.c \
+							prep_b_to_a.c swap.c utils.c sort_three.c \
+							push.c rev_rotate.c rotate.c \
+							sort_all_utils.c sort_all.c prep_a_to_b.c \
+							split.c
 
 OBJECTS 		= $(SOURCES:.c=.o)
 
@@ -28,8 +30,8 @@ FT_PRINTF			= ./ft_printf/libftprintf.a
 
 # Compiler and CFlags
 CC 				= gcc
-CFLAGS			= -Wall -Wextra -Werror -I
-LDFLAGS			= -L./libft -lft -L./ft_printf -lft
+CFLAGS			= -Wall -Wextra -Werror -I. -g
+LDFLAGS			= -L./libft -lft -L./ft_printf -lftprintf
 
 # Build Rules
 $(NAME): 		$(OBJECTS) $(LIBFT) $(FT_PRINTF)
@@ -38,7 +40,7 @@ $(NAME): 		$(OBJECTS) $(LIBFT) $(FT_PRINTF)
 all:			$(NAME)
 
 %.o: %.c		$(INCLUDE)
-				$(CC) -c $(CFLAGS) $(INCLUDE) $< -o $@
+				$(CC) -c $(CFLAGS) $< -o $@
 
 $(LIBFT):
 	make -C ./libft

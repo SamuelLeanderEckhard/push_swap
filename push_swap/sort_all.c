@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 17:30:52 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/27 18:38:36 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/29 18:47:41 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ void	sort_all(t_stack **a, t_stack **b)
 		push_b_to_a(a, b);
 	}
 	current_index(*a);
-	min_on_top(a);
+	min_to_top(a);
 }

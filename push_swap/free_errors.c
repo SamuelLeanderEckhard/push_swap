@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 17:51:08 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/27 18:57:30 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/29 23:26:08 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,15 @@ int	error_syntax(char *str_check)
 	if (!(*str_check == '+' || *str_check == '-'
 			|| (*str_check >= '0' && *str_check <= '9')))
 		return (FAILURE);
-	if (!(*str_check == '+' || *str_check == '-')
-		&& !(str_check[1] >= '0' && str_check[1] <= '9'))
+	if ((*str_check == '+' || *str_check == '-')
+			&& !(str_check[1] >= '0' && str_check[1] <= '9'))
 		return (FAILURE);
-	while (*++str_check)
+	++str_check;
+	while (*str_check)
 	{
 		if (!(*str_check >= '0' && *str_check <= '9'))
 			return (FAILURE);
+		++str_check;
 	}
 	return (OK);
 }
@@ -56,7 +58,7 @@ int	error_syntax(char *str_check)
 int	error_duplicate(t_stack *a, int n)
 {
 	if (a == NULL)
-		return (FAILURE);
+		return (OK);
 	while (a)
 	{
 		if (a->nbr == n)

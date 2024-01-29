@@ -6,16 +6,14 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 17:50:56 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/27 21:52:22 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/29 22:16:07 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <unistd.h>
 # include <stddef.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <stdbool.h>
 # include <limits.h>
@@ -88,5 +86,7 @@ t_stack	*find_max(t_stack *stack);
 t_stack	*find_min(t_stack *stack);
 int		stack_len(t_stack *stack);
 bool	stack_sorted(t_stack *stack);
+
+char	**split(char *s, char c);
 
 #endif
