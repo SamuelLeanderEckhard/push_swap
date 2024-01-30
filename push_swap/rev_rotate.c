@@ -6,11 +6,11 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:22:58 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/27 22:03:12 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:45:07 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "header_file/push_swap.h"
 
 // Bottom to top
 static void	rev_rotate(t_stack **stack)

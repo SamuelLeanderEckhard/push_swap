@@ -6,12 +6,13 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 17:30:52 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/29 18:47:41 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/30 21:28:13 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "header_file/push_swap.h"
 
+// Sorts stack 'a' if it has more than 3 nodes
 void	sort_all(t_stack **a, t_stack **b)
 {
 	int	len_a;

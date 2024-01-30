@@ -6,12 +6,13 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 21:27:39 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/27 19:30:48 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/30 22:01:13 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "header_file/push_swap.h"
 
+// Finds last node
 t_stack	*find_last(t_stack *stack)
 {
 	if (stack == NULL)
@@ -21,6 +22,7 @@ t_stack	*find_last(t_stack *stack)
 	return (stack);
 }
 
+// Checks if stack is sorted in ascending order
 bool	stack_sorted(t_stack *stack)
 {
 	if (stack == NULL)
@@ -34,6 +36,7 @@ bool	stack_sorted(t_stack *stack)
 	return (true);
 }
 
+// Counts stack's length
 int	stack_len(t_stack *stack)
 {
 	int	count;
@@ -49,6 +52,7 @@ int	stack_len(t_stack *stack)
 	return (count);
 }
 
+// Finds largest number in the stack
 t_stack	*find_max(t_stack *stack)
 {
 	long	max;
@@ -69,6 +73,7 @@ t_stack	*find_max(t_stack *stack)
 	return (max_node);
 }
 
+// Finds lowest number in a stack
 t_stack	*find_min(t_stack *stack)
 {
 	long	min;

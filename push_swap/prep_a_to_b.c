@@ -6,12 +6,13 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 23:20:13 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/27 21:51:50 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/30 21:24:35 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "header_file/push_swap.h"
 
+// Median definition and current position in the stack
 void	current_index(t_stack *stack)
 {
 	int	i;
@@ -33,27 +34,28 @@ void	current_index(t_stack *stack)
 	}
 }
 
+// Defines target_node for 'a' to 'b'
 static void	set_target_a(t_stack *a, t_stack *b)
 {
 	t_stack	*current_b;
 	t_stack	*target_node;
-	long	best_match_index;
+	long	min_node;
 
 	while (a)
 	{
-		best_match_index = LONG_MIN;
+		min_node = LONG_MIN;
 		current_b = b;
 		while (current_b)
 		{
 			if (current_b->nbr < a->nbr
-				&& current_b->nbr > best_match_index)
+				&& current_b->nbr > min_node)
 			{
-				best_match_index = current_b->nbr;
+				min_node = current_b->nbr;
 				target_node = current_b;
 			}
 			current_b = current_b->next;
 		}
-		if (best_match_index == LONG_MIN)
+		if (min_node == LONG_MIN)
 			a->target_node = find_max(b);
 		else
 			a->target_node = target_node;
@@ -61,6 +63,7 @@ static void	set_target_a(t_stack *a, t_stack *b)
 	}
 }
 
+// Analyses the push_cost
 static void	cost_analysis_a(t_stack *a, t_stack *b)
 {
 	int	len_a;
@@ -76,11 +79,12 @@ static void	cost_analysis_a(t_stack *a, t_stack *b)
 		if (a->target_node->above_median)
 			a->push_cost = a->push_cost + a->target_node->index;
 		else
-			a->push_cost += len_b - (a->target_node->index);
+			a->push_cost = a->push_cost + len_b - (a->target_node->index);
 		a = a->next;
 	}
 }
 
+// Sets the node's 'cheapest' to true
 static void	set_cheapest(t_stack *stack)
 {
 	long	cheapest_value;
@@ -101,6 +105,7 @@ static void	set_cheapest(t_stack *stack)
 	cheapest_node->cheapest = true;
 }
 
+// Combines all functions and its definitions - ready to push and sort
 void	init_nodes_a(t_stack *a, t_stack *b)
 {
 	current_index(a);

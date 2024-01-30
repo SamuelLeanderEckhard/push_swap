@@ -6,78 +6,85 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:39:59 by seckhard          #+#    #+#             */
-/*   Updated: 2023/09/22 14:56:16 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:14:48 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	*ft_free(char **f, int i)
+static int	counter(char *str, char space)
 {
-	int		x;
+	int		count;
+	bool	inside_word;
 
-	x = 0;
-	while (x < i)
+	count = 0;
+	while (*str)
 	{
-		free(f[x]);
-		x++;
+		inside_word = false;
+		while (*str == space)
+			++str;
+		while (*str != space && *str)
+		{
+			if (!inside_word)
+			{
+				++count;
+				inside_word = true;
+			}
+			++str;
+		}
 	}
-	free(f);
-	return (NULL);
+	return (count);
 }
 
-// function is counted
-size_t	ft_counter(char const *s, char c)
+static char	*get_next_word(char *str, char space)
 {
-	size_t	onetwothree;
+	static int	cursor = 0;
+	char		*next_word;
+	int			len;
+	int			i;
 
-	if (!*s)
-		return (0);
-	onetwothree = 0;
-	while (*s)
-	{
-		while (*s == c)
-			s++;
-		if (*s)
-			onetwothree++;
-		while (*s != c && *s)
-			s++;
-	}
-	return (onetwothree);
-}
-
-// splits string into substrings
-	// allocate memory for the array of strings
-	// skips , \t ; : | / space - _ .
-	// calculates the length of the current word
-	// searches in string s for first encounter of c
-char	**ft_split(char const *s, char c)
-{
-	char	**str;
-	size_t	lenstart;
-	size_t	lenend;
-	size_t	i;
-
-	lenstart = 0;
+	len = 0;
 	i = 0;
-	str = (char **)malloc((ft_counter(s, c) + 1) * sizeof(char *));
-	if (!s || !str)
-		return (ft_free(str, i));
-	while (i < ft_counter(s, c))
+	while (str[cursor] == space)
+		++cursor;
+	while ((str[cursor + len] != space) && str[cursor + len])
+		++len;
+	next_word = malloc((size_t)len * sizeof(char) + 1);
+	if (!next_word)
+		return (NULL);
+	while ((str[cursor] != space) && str[cursor])
+		next_word[i++] = str[cursor++];
+	next_word[i] = '\0';
+	return (next_word);
+}
+
+char	**ft_split(char *str, char space)
+{
+	int		words_count;
+	char	**result_array;
+	int		i;
+
+	i = 0;
+	words_count = counter(str, space);
+	if (!words_count)
+		exit(1);
+	result_array = malloc(sizeof(char *) * (size_t)(words_count + 2));
+	if (!result_array)
+		return (NULL);
+	while (words_count-- >= 0)
 	{
-		while (s[lenstart] == c)
-			lenstart++;
-		lenend = lenstart;
-		while (s[lenend] != c && s[lenend] != '\0')
-			lenend++;
-		str[i] = ft_substr(s, lenstart, (lenend - lenstart));
-		if (!str[i])
-			return (ft_free(str, i));
-		lenstart = lenend;
-		i++;
+		if (i == 0)
+		{
+			result_array[i] = malloc(sizeof(char));
+			if (!result_array[i])
+				return (NULL);
+			result_array[i++][0] = '\0';
+			continue ;
+		}
+		result_array[i++] = get_next_word(str, space);
 	}
-	str[i] = NULL;
-	return (str);
+	result_array[i] = NULL;
+	return (result_array);
 }
 
 /*int main() {
@@ -88,7 +95,7 @@ char	**ft_split(char const *s, char c)
     size_t wordCount = ft_counter(input, delimiter);
 
     // Print the result
-    printf("Number of substrings separated by '%c': %zu\n", delimiter,
+    printf("Number of substrings separated by '%space': %zu\n", delimiter,
 		wordCount);
 
     return (0);

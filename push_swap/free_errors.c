@@ -6,11 +6,11 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 17:51:08 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/29 23:26:08 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:44:07 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "header_file/push_swap.h"
 
 void	free_stack(t_stack	**stack)
 {
@@ -43,7 +43,7 @@ int	error_syntax(char *str_check)
 			|| (*str_check >= '0' && *str_check <= '9')))
 		return (FAILURE);
 	if ((*str_check == '+' || *str_check == '-')
-			&& !(str_check[1] >= '0' && str_check[1] <= '9'))
+		&& !(str_check[1] >= '0' && str_check[1] <= '9'))
 		return (FAILURE);
 	++str_check;
 	while (*str_check)

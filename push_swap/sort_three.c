@@ -6,12 +6,13 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:26:45 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/25 21:44:05 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/30 21:31:20 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "header_file/push_swap.h"
 
+// Sorts stack 'a' if it has 3 nodes
 void	sort_three(t_stack **a)
 {
 	t_stack	*biggest_node;

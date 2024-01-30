@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 20:32:47 by seckhard          #+#    #+#             */
-/*   Updated: 2023/10/05 21:48:53 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:21:16 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,8 @@ int	ft_printf(const char *format, ...)
 	int			length;
 
 	length = 0;
-
 	if (format == 0)
 		return (-1);
-
 	va_start(args, format);
 	while (*format)
 	{
@@ -60,7 +58,7 @@ int	ft_printf(const char *format, ...)
 	return (length);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	c = 's';
 	char	s[] = "Samuel";
@@ -98,4 +96,4 @@ int	main(void)
 	printf("%d\n", resultorginal);
 	ft_printf("%d\n", resultmy);
 	return (0);	
-}
+}*/

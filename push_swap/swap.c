@@ -6,11 +6,11 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:02:17 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/23 18:18:23 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:45:47 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "header_file/push_swap.h"
 
 // Swap the top and second top position of a stack
 static void	swap(t_stack **head)

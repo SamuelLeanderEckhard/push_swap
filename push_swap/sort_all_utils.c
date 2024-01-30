@@ -6,12 +6,14 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:56:39 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/27 22:04:59 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/30 22:00:38 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "header_file/push_swap.h"
 
+/* Rotates both stack's top nodes to bottom until the
+	cheapest nodes/target nodes are on top*/
 void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
 	while (*b != cheapest_node->target_node
@@ -21,6 +23,8 @@ void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 	current_index(*b);
 }
 
+/*Rotates both stack's bottom nodes to top until the
+	cheapeast nodes/target nodes are on top*/
 void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
 	while (*b != cheapest_node->target_node
@@ -30,6 +34,7 @@ void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 	current_index(*b);
 }
 
+// Moves cheapest/target nodes on top of the stack and pushes
 void	push_a_to_b(t_stack **a, t_stack **b)
 {
 	t_stack	*cheapest_node;
@@ -52,6 +57,7 @@ void	push_b_to_a(t_stack **a, t_stack **b)
 	pa(a, b, false);
 }
 
+// Moves lowest number on top
 void	min_to_top(t_stack **a)
 {
 	while ((*a)->nbr != find_min(*a)->nbr)

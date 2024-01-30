@@ -6,12 +6,13 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 22:40:29 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/27 22:02:30 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/30 21:05:18 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "header_file/push_swap.h"
 
+// Searches the cheapest node in the stack
 t_stack	*get_cheapest(t_stack *stack)
 {
 	if (stack == NULL)
@@ -25,6 +26,7 @@ t_stack	*get_cheapest(t_stack *stack)
 	return (NULL);
 }
 
+// Moves node to the top of the stack
 void	push_init(t_stack **stack, t_stack *top_node,
 					char stack_name)
 {
@@ -47,6 +49,7 @@ void	push_init(t_stack **stack, t_stack *top_node,
 	}
 }
 
+// String to a long value
 static long	ft_atol(const char *s)
 {
 	long	result;
@@ -67,6 +70,7 @@ static long	ft_atol(const char *s)
 	return (result * sign);
 }
 
+// Appends node to the last node of the stack
 static void	append_node(t_stack **stack, int n)
 {
 	t_stack		*node;
@@ -92,6 +96,7 @@ static void	append_node(t_stack **stack, int n)
 	}
 }
 
+// Initiates stack 'a', handles errors and appends nodes
 void	init_stack_a(t_stack **a, char	**argv)
 {
 	long	n;

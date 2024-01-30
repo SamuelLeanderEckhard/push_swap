@@ -6,11 +6,11 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:00:40 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/25 18:20:36 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:45:00 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "header_file/push_swap.h"
 
 // Pushes the top node from one stack to the top of another
 static void	push(t_stack **dst, t_stack **src)
