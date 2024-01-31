@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 21:27:39 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/30 22:01:13 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/31 23:30:44 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ t_stack	*find_max(t_stack *stack)
 	if (stack == NULL)
 		return (NULL);
 	max = LONG_MIN;
+	max_node = NULL;
 	while (stack)
 	{
 		if (stack->nbr > max)
@@ -82,6 +83,7 @@ t_stack	*find_min(t_stack *stack)
 	if (stack == NULL)
 		return (NULL);
 	min = LONG_MAX;
+	min_node = NULL;
 	while (stack)
 	{
 		if (stack->nbr < min)

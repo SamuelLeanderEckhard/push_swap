@@ -6,14 +6,14 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:00:40 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/30 20:45:00 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/31 22:02:51 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header_file/push_swap.h"
 
 // Pushes the top node from one stack to the top of another
-static void	push(t_stack **dst, t_stack **src)
+static void	push_to_stack(t_stack **dst, t_stack **src)
 {
 	t_stack	*push_node;
 
@@ -38,17 +38,15 @@ static void	push(t_stack **dst, t_stack **src)
 }
 
 // Pushes to stack a
-void	pa(t_stack **a, t_stack **b, bool print)
+void	pa(t_stack **a, t_stack **b)
 {
-	push(a, b);
-	if (!print)
-		ft_printf("pa\n");
+	push_to_stack(a, b);
+	ft_printf("pa\n");
 }
 
 // Pushes to stack b
-void	pb(t_stack **b, t_stack **a, bool print)
+void	pb(t_stack **b, t_stack **a)
 {
-	push(b, a);
-	if (!print)
-		ft_printf("pb\n");
+	push_to_stack(b, a);
+	ft_printf("pb\n");
 }

@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:26:45 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/30 21:31:20 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/31 22:16:47 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	sort_three(t_stack **a)
 
 	biggest_node = find_max(*a);
 	if (biggest_node == *a)
-		ra(a, false);
+		ra(a);
 	else if ((*a)->next == biggest_node)
-		rra(a, false);
+		rra(a);
 	if ((*a)->nbr > (*a)->next->nbr)
-		sa(a, false);
+		sa(a);
 }

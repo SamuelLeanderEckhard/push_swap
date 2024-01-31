@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 17:50:56 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/30 20:47:45 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/01/31 23:30:58 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ typedef struct s_stack
 }			t_stack;
 
 //*Operations
-void	sa(t_stack **a, bool print);
-void	sb(t_stack **b, bool print);
-void	ss(t_stack **a, t_stack **b, bool print);
-void	ra(t_stack **a, bool print);
-void	rb(t_stack **b, bool print);
-void	rr(t_stack **a, t_stack **b, bool print);
-void	rra(t_stack **a, bool print);
-void	rrb(t_stack **b, bool print);
-void	rrr(t_stack **a, t_stack **b, bool print);
-void	pa(t_stack **a, t_stack **b, bool print);
-void	pb(t_stack **b, t_stack **a, bool print);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **b, t_stack **a);
 
 //*Error/Free handling
 void	free_stack(t_stack	**stack);

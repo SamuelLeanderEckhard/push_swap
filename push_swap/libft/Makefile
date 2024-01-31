@@ -6,7 +6,7 @@
 #    By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 14:56:45 by seckhard          #+#    #+#              #
-#    Updated: 2023/12/11 14:26:49 by seckhard         ###   ########.fr        #
+#    Updated: 2024/01/31 20:12:59 by seckhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,38 +20,40 @@ SOURCES = \
 			ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 			ft_putnbr_fd.c
-			
-OBJECTS = $(SOURCES:.c=.o)
+
+OBJ_DIR = 	obj
+OBJECTS = 	$(addprefix $(OBJ_DIR)/, $(SOURCES:.c=.o))
 
 BONUS =	\
 				ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c\
 				ft_lstsize.c ft_lstlast.c ft_lstdelone.c\
 				ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-BONUS_OBJECTS = $(BONUS:.c=.o)
+BONUS_OBJECTS = $(addprefix $(OBJ_DIR)/, $(BONUS:.c=.o))
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I.
+CC = 		gcc
+CFLAGS = 	-Wall -Wextra -Werror -I. -g
 
-NAME = libft.a 
+NAME = 		libft.a 
 
-all: $(NAME)
+all: 		$(NAME)
 
-$(NAME): $(OBJECTS)
-			$(AR) -r $@ $?
+$(NAME): 	$(OBJECTS)
+			$(AR) -r $@ $^
 
-%.o: %.c
-		$(CC) -c $(CFLAGS) $?
+$(OBJ_DIR)/%.o: %.c
+			@mkdir -p $(OBJ_DIR)
+			$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
-			rm -f $(OBJECTS) $(BONUS_OBJECTS)
+			rm -rf $(OBJ_DIR)
 
-fclean: clean
+fclean: 	clean
 			rm -f $(NAME)
 
-re: fclean all
+re: 		fclean all
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus: 		$(BONUS_OBJECTS)
+			ar rcs $(NAME) $^
 
 .PHONY: all clean fclean re bonus
