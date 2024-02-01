@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 17:50:56 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/31 23:30:58 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/02/01 19:13:02 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,6 @@ void	sort_all(t_stack **a, t_stack **b);
 void	sort_three(t_stack **a);
 
 //*Sort Algorithm Utils
-void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node);
-void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node);
 void	push_a_to_b(t_stack **a, t_stack **b);
 void	push_b_to_a(t_stack **a, t_stack **b);
 void	min_to_top(t_stack **a);

@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 21:27:39 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/31 23:30:44 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:38:02 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,20 +55,16 @@ int	stack_len(t_stack *stack)
 // Finds largest number in the stack
 t_stack	*find_max(t_stack *stack)
 {
-	long	max;
 	t_stack	*max_node;
 
 	if (stack == NULL)
 		return (NULL);
-	max = LONG_MIN;
 	max_node = NULL;
 	while (stack)
 	{
-		if (stack->nbr > max)
-		{
-			max = stack->nbr;
-			max_node = stack;
-		}
+		if (stack->nbr > LONG_MIN)
+			if (max_node == NULL || stack->nbr > max_node->nbr)
+				max_node = stack;
 		stack = stack->next;
 	}
 	return (max_node);
@@ -77,20 +73,16 @@ t_stack	*find_max(t_stack *stack)
 // Finds lowest number in a stack
 t_stack	*find_min(t_stack *stack)
 {
-	long	min;
 	t_stack	*min_node;
 
 	if (stack == NULL)
 		return (NULL);
-	min = LONG_MAX;
 	min_node = NULL;
 	while (stack)
 	{
-		if (stack->nbr < min)
-		{
-			min = stack->nbr;
-			min_node = stack;
-		}
+		if (stack->nbr < LONG_MAX)
+			if (min_node == NULL || stack->nbr < min_node->nbr)
+				min_node = stack;
 		stack = stack->next;
 	}
 	return (min_node);

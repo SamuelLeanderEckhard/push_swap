@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:56:39 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/31 22:12:45 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/02/01 19:20:15 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* Rotates both stack's top nodes to bottom until the
 	cheapest nodes/target nodes are on top*/
-void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
+static void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
 	while (*b != cheapest_node->target_node
 		&& *a != cheapest_node)
@@ -25,7 +25,7 @@ void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 
 /*Rotates both stack's bottom nodes to top until the
 	cheapeast nodes/target nodes are on top*/
-void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
+static void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
 	while (*b != cheapest_node->target_node
 		&& *a != cheapest_node)
