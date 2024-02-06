@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:56:39 by seckhard          #+#    #+#             */
-/*   Updated: 2024/02/01 19:20:15 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/02/04 20:28:26 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 	current_index(*b);
 }
 
-// Moves cheapest/target nodes on top of the stack and pushes
+// Moves cheapest/target nodes on top of the stack and pushes to b
 void	push_a_to_b(t_stack **a, t_stack **b)
 {
 	t_stack	*cheapest_node;

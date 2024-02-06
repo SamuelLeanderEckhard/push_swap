@@ -6,7 +6,7 @@
 #    By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 14:56:45 by seckhard          #+#    #+#              #
-#    Updated: 2024/01/31 20:12:59 by seckhard         ###   ########.fr        #
+#    Updated: 2024/02/01 22:56:04 by seckhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,8 @@ BONUS =	\
 
 BONUS_OBJECTS = $(addprefix $(OBJ_DIR)/, $(BONUS:.c=.o))
 
-CC = 		gcc
-CFLAGS = 	-Wall -Wextra -Werror -I. -g
+CC = 		cc
+CFLAGS = 	-Wall -Wextra -Werror -I.
 
 NAME = 		libft.a 
 

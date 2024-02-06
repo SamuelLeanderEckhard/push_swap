@@ -6,7 +6,7 @@
 #    By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/14 17:57:16 by seckhard          #+#    #+#              #
-#    Updated: 2024/01/30 20:41:41 by seckhard         ###   ########.fr        #
+#    Updated: 2024/02/04 19:17:05 by seckhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,16 +36,16 @@ LIBFT			= ./libft/libft.a
 FT_PRINTF		= ./ft_printf/libftprintf.a
 
 # Compiler and CFlags
-CC 				= gcc
-CFLAGS			= -Wall -Wextra -Werror -I$(INCLUDE_DIR) -g
+CC 				= cc
+CFLAGS			= -Wall -Wextra -Werror -I$(INCLUDE_DIR)
 LDFLAGS			= -L./libft -lft -L./ft_printf -lftprintf
 
 # Build Rules
 $(NAME): 		$(OBJECTS) $(LIBFT) $(FT_PRINTF)
 				$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME) $(LDFLAGS)
+				@echo "$(GREEN)Project built successfully$(NC)"
 
 all:			$(NAME)
-				@echo "$(GREEN)Compilation completed successfully$(NC)"
 
 %.o: %.c		$(INCLUDE)
 				@echo "$(GREEN)Compiling $<$(NC)"

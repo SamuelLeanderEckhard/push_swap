@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 22:40:29 by seckhard          #+#    #+#             */
-/*   Updated: 2024/01/31 22:09:40 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/02/04 20:49:41 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ static void	append_node(t_stack **stack, int n)
 		return ;
 	node->next = NULL;
 	node->nbr = n;
+	node->cheapest = false;
 	if (!(*stack))
 	{
 		*stack = node;
